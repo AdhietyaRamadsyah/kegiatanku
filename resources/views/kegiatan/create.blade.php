@@ -44,6 +44,7 @@
                                             <option value="">Silahkan Pilih Status</option>
                                             <option value="Aktif">Aktif</option>
                                             <option value="Non-Aktif">Non-Aktif</option>
+                                            <option value="Cooming Soon">Cooming Soon</option>
                                         </select>
                                     </div>
                                 </div>

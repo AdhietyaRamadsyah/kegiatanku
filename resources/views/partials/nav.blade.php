@@ -10,22 +10,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="{{url('/')}}" class="nav-link">WELCOME PAGE</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="{{route('dashboard.index')}}" class="nav-link">DASHBOARD</a>
                 </li>
+                @role('admin')
                 <li class="nav-item">
                     <a href="{{route('data.siswa')}}" class="nav-link">DATA SISWA</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('manage-kegiatan')}}" class="nav-link">MANAGE KEGIATAN</a>
                 </li>
+                @endrole
+                @role('bendahara')
                 <li class="nav-item">
                     <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link">VERIFIKASI PENDAFTARAN</a>
                 </li>
-
+                @endrole
             </ul>
 
             <!-- Right Side Of Navbar -->
