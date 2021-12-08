@@ -12,7 +12,7 @@
                  <div class="card-body">
                      <div class="alert alert-primary" role="alert">
                          <h3>Perhatian !!!</h3>
-                            Silahkan isi dibawah ini dengan benar.
+                            Silahkan isi data dibawah ini dengan benar.
                      </div>
 
                      <form action="{{route('tambah-data.store')}}" method="post">
@@ -93,7 +93,7 @@
                                     <div class="form-group">
                                         <label for="">Pilih Akses</label>
                                         <select name="roles" id="" class="form-control">
-                                            <option value="">- Pilih akses</option>
+                                            <option value="">Silahkan Pilih akses</option>
                                             @foreach ($roles as $role)
                                                 <option value="{{$role->id}}">{{$role->name}}</option>
                                             @endforeach
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label for="">Password</label>
-                                    <input type="password" name="password" class="form-control" id="">
+                                    <input type="password" name="password" class="form-control" id="" placeholder="Isi Password anda">
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-info">Simpan</button>
