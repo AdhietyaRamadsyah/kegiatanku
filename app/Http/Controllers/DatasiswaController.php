@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class DataSiswaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $students = Role::with('users')

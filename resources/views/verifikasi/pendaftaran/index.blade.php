@@ -60,7 +60,7 @@
                                             <form action="{{route('verifikasi-pendaftaran.accept', $register->id)}}" method="post">
                                                 @csrf
                                                 @method('PATCH')
-                                                <button class="btn btn-succes btn-sm">Tambah Peserta</button>
+                                                <button class="btn btn-info btn-sm">Tambah Peserta</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"> Data Terverifikasi</li>
+        </ol>
+    </nav>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -23,12 +28,11 @@
                                     <td>
                                         {{$pembayaran->activity->kode_activity}}
                                     </td>
-                                        <td>{{$pembayaran->activity->kode_activity}}</td>
                                         <td>Nis Belum</td>
                                         <td>{{$pembayaran->user->name}}</td>
                                         <td>{{$pembayaran->created_at->diffForHumans()}}</td>
                                         <td>
-                                            <span class="badge bg-secondary text-white">
+                                            <span class="badge bg-info text-dark">
                                                 {{$pembayaran->status}}
                                             </span>
                                         </td>

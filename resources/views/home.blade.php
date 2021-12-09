@@ -109,8 +109,8 @@
                    <div class="d-flex justify-content-between">
                        <div>
                            <h5>Pendaftaran</h5>
-                           <a href="{{route('pendaftaran.pending')}}" class="btn btn-outline-secondary btn-sm">
-                           <h6 class="text-secondary">Pending</h6>
+                           <a href="{{route('pendaftaran.pending')}}" class="btn btn-outline-warning btn-sm">
+                           <h6 class="text-warning">Pending</h6>
                            </a>
                        </div>
                        <div>
@@ -126,12 +126,12 @@
                    <div class="d-flex justify-content-between">
                        <div>
                            <h5>Pendaftaran</h5>
-                           <a href="{{route('pendaftaran.verified')}}" class="btn btn-outline-secondary btn-sm">
-                           <h6 class="text-secondary">Terverifikasi</h6>
+                           <a href="{{route('pendaftaran.verified')}}" class="btn btn-outline-info btn-sm">
+                           <h6 class="text-info">Terverifikasi</h6>
                            </a>
                        </div>
                        <div>
-                           <h3>{{$terverifikasi}}</h3>
+                           <h3>{{$verified}}</h3>
                        </div>
                    </div>
                 </div>

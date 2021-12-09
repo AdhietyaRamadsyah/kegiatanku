@@ -9,7 +9,7 @@
                     <div class="mb-3">
                         <a href="{{route('verifikasi-pendaftaran.ulang')}}"
                         class="btn btn-success">Daftar Ulang</a>
-                        <a href="{{route('manage-kegiatan.add-form')}}"
+                        <a href="{{route('verifikasi-pendaftaran.peserta')}}"
                         class="btn btn-success">Peserta</a>
                     </div>
                     <form action="" method="post">
