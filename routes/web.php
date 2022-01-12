@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'kegiatan'], function(){
     Route::get('/tampilkan', 'KegiatanController@show')->name('kegiatan.tampilkan');
     Route::get('/create/{kegiatan}', 'KegiatanController@create')->name('kegiatan.create');
-    Route::post('/store','KegiatanController@store')->name('kegiatan.store');
+    Route::post('/store/{user}','KegiatanController@store')->name('kegiatan.store');
 });
 Route::get('/pendaftaran', 'DaftarController@index')->name('daftar.index');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard.index');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'data'], function() {
 
 Route::group(['prefix' => 'tambah-data'], function() {
     Route::get('/siswa', 'DataSiswaController@create')->name('tambah-data.siswa');
-    route::post('store', 'DataSiswaController@store')->name('tambah-data.store');
+    Route::post('/store', 'DataSiswaController@store')->name('tambah-data.store');
 });
 
 Route::group(['prefix' => 'edit-data'], function() {
@@ -48,7 +48,7 @@ Route::group(['prefix'  => 'manage-kegiatan'], function(){
     route::get('/add-form/edit-kegiatan/{id}','ManagekegiatanController@edit')->name('manage-kegiatan.add-form.edit-kegiatan');
     route::post('/post','ManagekegiatanController@store')->name('manage-kegiatan.store');
     route::delete('/delete/{id}','ManagekegiatanController@destroy')->name('manage-kegiatan.delete');
-    route::patch('/update/{id}','ManagekegiatanController@update')->name('updated.data.kegiatan');
+    route::patch('/update/{activity}','ManagekegiatanController@update')->name('updated.data.kegiatan');
 });
 
 Route::group(['prefix' => 'verifikasi-pendaftaran'], function(){
@@ -56,19 +56,19 @@ Route::group(['prefix' => 'verifikasi-pendaftaran'], function(){
     Route::get('/ulang','DaftarUlangController@index')->name('verifikasi-pendaftaran.ulang');
     Route::get('/peserta','PesertaController@index')->name('verifikasi-pendaftaran.peserta');
     Route::get('/edit-peserta', 'VerifikasiController@edit')->name('verifikasi-pendaftaran.edit');
-    route::patch('/accept/{register}','PesertaController@store')->name('verifikasi-pendaftaran.accept');
+    Route::patch('/accept/{register}','PesertaController@store')->name('verifikasi-pendaftaran.accept');
 });
 
 Route::group(['prefix' => 'user'], function(){
     Route::get('ambil-form/{register}', 'PaymentController@create')->name('user.ambil-form');
-    route::post('verifikasi-pembayaran','PaymentController@store')->name('user.verifikasi-pembayaran');
+    Route::post('verifikasi-pembayaran/{register}', 'PaymentController@store')->name('user-verifikasi-pembayaran');
 });
 
 Route::group(['prefix' => 'pendaftaran'], function(){
-    Route::get('pending', 'Pendaftaran\PendingController@index')->name('pendaftaran.pending');
-    Route::get('verified', 'Pendaftaran\VerifiedController@index')->name('pendaftaran.verified');
+    route::get('pending', 'Pendaftaran\PendingController@index')->name('pendaftaran.pending');
+    route::get('verified', 'Pendaftaran\VerifiedController@index')->name('pendaftaran.verified');
 });
 
 Route::group(['prefix' => 'updated'], function(){
-    Route::patch('data/siswa/{user}','DatasiswaController@updated')->name('updated.data.siswa');
+    route::patch('data/siswa/{user}', 'DataSiswaController@updated')->name('updated.data.siswa');
 });

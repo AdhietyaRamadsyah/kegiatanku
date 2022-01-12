@@ -15,7 +15,7 @@
                             Silahkan isi dibawah ini dengan benar.
                      </div>
 
-                     <form action="{{route('updated.data.kegiatan', $kegiatan->id)}}" method="post">
+                    <form action="{{route('updated.data.kegiatan', $kegiatan->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                          <div class="row">
@@ -34,7 +34,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">image</label>
-                                        <input type="file" name="image" class="form-control" id="" value="{{$kegiatan->image}}">
+                                        <input type="file" name="image" class="form-control" id="" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -71,6 +71,12 @@
                                         <input type="date" name="tgl_selesai" class="form-control" id="" value="{{$kegiatan->tgl_selesai}}">
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="">Jumlah Peserta</label>
+                                        <input type="number" name="jumlah_peserta" id="" class="form-control" value="{{$kegiatan->jumlah_peserta}}">
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-info">Simpan</button>
                                 </div>
@@ -78,5 +84,5 @@
                      </form>
                  </div>
              </div>
-    </div>
+        </div>
 @endsection
