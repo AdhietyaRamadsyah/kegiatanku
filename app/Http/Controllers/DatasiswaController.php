@@ -64,8 +64,12 @@ class DataSiswaController extends Controller
         return redirect()->back();
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('data.siswa.edit');
+        $array = [
+            'user' => User::findOrFail($id),
+            'role' => Role::pluck('name', 'id'),
+        ];
+        return view('data.siswa.edit', $array);
     }
 }

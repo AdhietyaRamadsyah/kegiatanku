@@ -22,19 +22,19 @@
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">NISN</label>
-                                     <input type="text" name="nisn" class="form-control" id="" placeholder="nisn siswa">
+                                     <input type="text" name="nisn" class="form-control" id="" value="{{$user->students->first()->nisn ?? 'Belum tersedia'}}">
                                  </div>
                              </div>
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">Nama</label>
-                                     <input type="text" name="nama" class="form-control" id="" placeholder="isi nama siswa">
+                                     <input type="text" name="name" class="form-control" id="" value="{{$user->name}}">
                                  </div>
                              </div>
                                  <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Jenis Kelamin</label>
-                                        <select name="jenis_kelamin" id="" class="form-control">
+                                        <select name="gender" id="" class="form-control">
                                             <option value="">Silahkan Pilih Jenis Kelamin</option>
                                             <option value="Laki-Laki">Laki-Laki</option>
                                             <option value="Perempuan">Perempuan</option>
@@ -44,7 +44,7 @@
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">Agama</label>
-                                     <select name="agama" id="" class="form-control">
+                                     <select name="religion" id="" class="form-control">
                                          <option value="">Silahkan Pilih Agama</option>
                                          <option value="Islam">Islam</option>
                                          <option value="Kristen">Kristen</option>
@@ -56,7 +56,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Jurusan</label>
-                                        <select name="" id="" class="form-control">
+                                        <select name="major" id="" class="form-control">
                                             <option value="">Silahkan Pilih Jurusan</option>
                                             <option value="AK">AK</option>
                                             <option value="AP">AP</option>
@@ -69,7 +69,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Kelas</label>
-                                        <select name="" id="" class="form-control">
+                                        <select name="class" id="" class="form-control">
                                             <option value="">Silahkan Pilih Kelas</option>
                                             <option value="X">X</option>
                                             <option value="XI">XI</option>
@@ -77,10 +77,16 @@
                                         </select>
                                     </div>
                                 </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="" >Nomor HP</label>
+                                    <input type="text" name="phone" id="" class="form-control" value="{{$user->students->first()->phone ?? 'Belum tersedia'}}">
+                                </div>
+                            </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Status</label>
-                                        <select name="" id="" class="form-control">
+                                        <select name="status" id="" class="form-control">
                                             <option value="">Silahkan Pilih Status</option>
                                             <option value="Aktif">Aktif</option>
                                             <option value="Non-Aktif">Non-Aktif</option>

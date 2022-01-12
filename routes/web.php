@@ -35,11 +35,11 @@ Route::group(['prefix' => 'data'], function() {
 
 Route::group(['prefix' => 'tambah-data'], function() {
     Route::get('/siswa', 'DataSiswaController@create')->name('tambah-data.siswa');
+    route::post('store', 'DataSiswaController@store')->name('tambah-data.store');
 });
 
 Route::group(['prefix' => 'edit-data'], function() {
-    route::get('siswa', 'DataSiswaController@edit')->name('edit-data.siswa');
-    route::post('store', 'DataSiswaController@store')->name('tambah-data.store');
+    route::get('siswa/{user}', 'DataSiswaController@edit')->name('edit-data.siswa');
 });
 
 Route::group(['prefix'  => 'manage-kegiatan'], function(){
