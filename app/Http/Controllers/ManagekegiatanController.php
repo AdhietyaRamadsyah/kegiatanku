@@ -75,4 +75,13 @@ class ManagekegiatanController extends Controller
         flash()->success('Data Kegiatan berhasil dihapus');
         return redirect(route('manage-kegiatan'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $kegiatan = Activity::findOrfail($id);
+
+        $kegiatan->update($request->all());
+
+        return redirect()->back();
+    }
 }
