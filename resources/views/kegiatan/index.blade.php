@@ -56,7 +56,6 @@
                                             <a href="{{route('manage-kegiatan.add-form.edit-kegiatan', $it->id)}}" class="btn btn-secondary btn-sm">Edit</a>
                                             <button class="btn btn-danger btn-sm" type="submit">Hapus</button>
                                         </form>
-
                                     </td>
                                 </tr>
                                 @endforeach

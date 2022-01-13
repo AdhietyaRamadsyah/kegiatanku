@@ -16,13 +16,12 @@ class DataSiswaController extends Controller
     
     public function index()
     {
-        $students = Role::with('users')
-                            ->where('name', 'student')
-                            ->latest()
-                            ->paginate(6);
+        $students = User::whereHas('roles', function ($q) {
+                            $q->where('roles.name', '=', 'student');
+                        })->paginate(6);
+
         return view('data.siswa.index', compact('students'));
     }
-
     public function create()
     {
         $roles = Role::all();
@@ -75,9 +74,22 @@ class DataSiswaController extends Controller
 
     public function updated(Request $request, $id)
     {
-        $students = Student::where('user_id','=', $id)->firstOrfail();
+        $student = Student::where('user_id','=', $id)->firstOrfail();
 
-        $students->update($request->all());
+        $student->update($request->all());
+
+        return redirect()->back();
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $student= Student::where('user_id', '=', $id)->firstOrFail();
+
+        if($student->delete()){
+            $user = User::findOrFail($id);
+
+            $user->delete();
+        }
 
         return redirect()->back();
     }

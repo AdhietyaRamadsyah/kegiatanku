@@ -72,3 +72,7 @@ Route::group(['prefix' => 'pendaftaran'], function(){
 Route::group(['prefix' => 'updated'], function(){
     route::patch('data/siswa/{user}', 'DataSiswaController@updated')->name('updated.data.siswa');
 });
+
+Route::group(['prefix' => 'destroy'], function(){
+    route::delete('data/siswa/{user}', 'DataSiswaController@destroy')->name('destroy.data.siswa');
+});
