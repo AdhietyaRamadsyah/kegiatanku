@@ -40,6 +40,7 @@ Route::group(['prefix' => 'tambah-data'], function() {
 
 Route::group(['prefix' => 'edit-data'], function() {
     route::get('siswa/{user}', 'DataSiswaController@edit')->name('edit-data.siswa');
+    route::get('activity/{activity}', 'ManagekegiatanController@edit')->name('edit-data.activity');
 });
 
 Route::group(['prefix'  => 'manage-kegiatan'], function(){
@@ -75,4 +76,6 @@ Route::group(['prefix' => 'updated'], function(){
 
 Route::group(['prefix' => 'destroy'], function(){
     route::delete('data/siswa/{user}', 'DataSiswaController@destroy')->name('destroy.data.siswa');
+    route::delete('data/activity/{activity}', 'ManagekegiatanController@destroy')->name('destroy.data.activity');
+    
 });
