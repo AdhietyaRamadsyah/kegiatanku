@@ -40,7 +40,7 @@ Route::group(['prefix' => 'tambah-data'], function() {
 
 Route::group(['prefix' => 'edit-data'], function() {
     route::get('siswa/{user}', 'DataSiswaController@edit')->name('edit-data.siswa');
-    route::get('activity/{activity}', 'ManagekegiatanController@edit')->name('edit-data.activity');
+    route::get('data/activity/{activity}', 'ManagekegiatanController@edit')->name('edit-data.activity');
 });
 
 Route::group(['prefix'  => 'manage-kegiatan'], function(){
@@ -78,4 +78,9 @@ Route::group(['prefix' => 'destroy'], function(){
     route::delete('data/siswa/{user}', 'DataSiswaController@destroy')->name('destroy.data.siswa');
     route::delete('data/activity/{activity}', 'ManagekegiatanController@destroy')->name('destroy.data.activity');
     
+});
+
+Route::group(['prefix' => 'cetak'], function(){
+    route::get('activity', 'Report\ActivityController@index')->name('cetak.activity');
+    route::get('data-activity', 'Report\ActivityController@edit')->name('cetak.semua-activity');
 });
