@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan All Activity</title>
+    <title>Laporan semua activity</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body class="bg-white">
     <div class="content px-3">
         <div class="mb-3">
-            <h3 class="text-info">Laporan All Activity</h3>
-            <h5 class="text-muted">SMK AL-BAHRI</h5>
+            <h3 class="text-info">Laporan semua activity</h3>
+            <h5 class="text-muted">SMK Nusa Bangsa</h5>
             <h5 class="text-muted">JL. MONAS NO.704</h5>
         </div>
         <div class="mb-3">

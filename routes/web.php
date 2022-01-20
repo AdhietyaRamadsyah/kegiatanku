@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'WelcomeController@index')->name('welcome');
+
 
 Auth::routes(); 
 
@@ -82,5 +81,5 @@ Route::group(['prefix' => 'destroy'], function(){
 
 Route::group(['prefix' => 'cetak'], function(){
     route::get('activity', 'Report\ActivityController@index')->name('cetak.activity');
-    route::get('data-activity', 'Report\ActivityController@edit')->name('cetak.semua-activity');
+    route::get('data-activity', 'Report\ActivityController@show')->name('cetak.semua-activity');
 });

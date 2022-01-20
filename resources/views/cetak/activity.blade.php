@@ -11,7 +11,7 @@
     <div class="content px-3">
         <div class="mb-3">
             <h3 class="text-info">Laporan Periode Activity</h3>
-            <h5 class="text-muted">SMK AL-BAHRI</h5>
+            <h5 class="text-muted">SMK NUSA BANGSA</h5>
             <h5 class="text-muted">JL. MONAS NO.704</h5>
         </div>
         <div class="mb-3">

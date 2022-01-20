@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="{{route('welcome')}}">
+        <a class="navbar-brand" href="{{ route('welcome') }}">
             KEGIATAN KU
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -14,14 +14,14 @@
                     <a href="{{url('/')}}" class="nav-link">WELCOME PAGE</a>
                 </li> -->
                 <li class="nav-item">
-                    <a href="{{route('dashboard.index')}}" class="nav-link">DASHBOARD</a>
+                    <a href="{{route('dashboard.index')}}" class="nav-link text-white">DASHBOARD</a>
                 </li>
                 @role('admin')
                 <li class="nav-item">
-                    <a href="{{route('data.siswa')}}" class="nav-link">DATA SISWA</a>
+                    <a href="{{route('data.siswa')}}" class="nav-link text-white">DATA SISWA</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('manage-kegiatan')}}" class="nav-link">MANAGE KEGIATAN</a>
+                    <a href="{{route('manage-kegiatan')}}" class="nav-link text-white">MANAGE KEGIATAN</a>
                 </li>
                 @endrole
                 @role('bendahara')
