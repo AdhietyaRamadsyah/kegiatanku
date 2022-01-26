@@ -10,7 +10,7 @@
                         Silahkan masukkan bukti pembayaran anda.       
                         </div> 
 
-                        <form action="{{route('user.verifikasi-pembayaran', $pembayaran->id)}}" enctype="multipart/form-data"  method="post">
+                        <form action="{{route('user-verifikasi-pembayaran', $pembayaran->id)}}" enctype="multipart/form-data"  method="post">
                             @csrf
                             
                             <div class="row">

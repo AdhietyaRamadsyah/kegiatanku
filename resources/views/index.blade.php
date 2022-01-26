@@ -3,39 +3,43 @@
 @section('content')
 <div class="container">
     <div class="row" style="margin-top: -70px;">
-    @foreach($kegiatans as $kegiatan)
-        <div class="col-md-4">
-            <div class="card body-0 shadow">
-                <div class="card-body">
-                    <h6>{{$kegiatan->nama_activity}}</h6>
-                    <p class="text-muted">{{$kegiatan->status}}</p>
+        @foreach ($kegiatans as $kegiatan)
+            <div class="col-md-4">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h3 class="text-danger">{{$kegiatan->nama_activity}}</h3>
+                        <p class="text-muted">
+                            {{str_limit(strip_tags($kegiatan->desc), 50)}}
+                        </p>
+                        <div>
+                            @if (strlen(strip_tags($kegiatan->desc)) > 50)
+                            <a href="" class="btn btn-outline-info btn-sm">Read More</a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
     </div>
-    <div class="row py-4">
+    <div class="row pt-4">
     @foreach($activitys as $activity)
         <div class="col-md-12 mb-3">
-            <div class="card border-0 shadow">
+            <div class="card border-0">
                 <div class="card-body">
                     <div class="d-flex justify justify-content-between">
                         <div class="d-flex">
-                            <img src="{{url('storage/'. $activity->image)}}" alt="" srcset="" width="100px" height="100px" class="rounded">
-                            <div class="ml-3">
-                                <h3>{{$activity->nama_activity}}</h3>
-                                <p>{{$activity->desc}}</p>
-                                <div class="d-flex align-items-center">
-                                    <h6 class="mr-3">created, {{$activity->created_at->diffForhumans()}}</h6>
-                                    <div>
-                                        <button type="submit" class="btn btn-sm btn-outline-info">Tersedia</button>
-                                    </div>
-                                </div>
+                            <img src="{{url('storage/'. $activity->image)}}" alt="" srcset="" width="100px" height="100px" class="mr-3 rounded">
+                            <div>
+                                <h3 class="text-danger">{{$activity->nama_activity}}</h3>
+                                <p class="text-muted">{{str_limit(strip_tags($activity->desc), 100)}}</p>
+                                <small class="text-info">
+                                    {{$activity->status}}, {{$activity->created_at->diffForhumans()}}
+                                </small>
                             </div>
                         </div>
                         <div>
-                        <a href="http://" class="btn btn-info">Daftar</a>
-                    </div>
+                        <a href="{{route('kegiatan.create', $activity->id)}}"class="btn btn-sm btn-outline-info">Read More</a>
+                        </div>
                     </div>
                 </div>
             </div>

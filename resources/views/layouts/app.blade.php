@@ -22,9 +22,16 @@
 <body>
 <div id="app">
         @include('layouts.nav')
-        <main class="py-4">
+        <div class="jumbotron">
+            <div class="container">
+                <div>
+                    <h5 class="text-white">Management Events</h4>
+                    <h2 class="text-white">SMK NUSA BANGSA</h2>
+                    <p class="text-white">Jl. Monas NO.704, RT004/003, Pondok Ungu, Bekasi, Jawa Barat 18736</p>
+                </div>
+            </div>
+        </div>
+        <main >
             @yield('content')
         </main>
     </div>
-</body>
-</html>

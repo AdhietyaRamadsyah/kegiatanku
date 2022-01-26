@@ -7,30 +7,38 @@
                 <li class="breadcrumb-item active" aria-current="page"> Data Siswa</li> 
                </ol>
              </nav>
-        <div class="row">
+        <div class="row mb-3" style="margin-top: -70px">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card border-0">
                     <div class="card-body">
                         <div class="mb-3">
-                            <a href="{{route('tambah-data.siswa')}}" class="btn btn-success">Tambah Siswa</a>
+                            <a href="{{route('tambah-data.siswa')}}" class="btn btn-info">Tambah Siswa</a>
                         </div>
                         <form action="" method="post">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <input type="date" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <input type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn btn-success" type="submit">Cari Data</button>
+                                    <button class="btn btn-info" type="submit">Cari Data Siswa</button>
                                 </div>
                             </div>
                         </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12">
+                <div class="card border-0">
+                    <div class="card-body">
                         <div class="mt-3">
                             <table class="table table-striped">
                                 <thead>
@@ -55,8 +63,8 @@
                                             <form action="{{route('destroy.data.siswa', $student->id)}}"  method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{route('edit-data.siswa', $student->id)}}" class="btn btn-secondary btn-sm">Edit</a>
-                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                <a href="{{route('edit-data.siswa', $student->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>

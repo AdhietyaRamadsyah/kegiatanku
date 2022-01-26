@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('welcome') }}">
+        <a class="navbar-brand" href="{{ route('/') }}">
             KEGIATAN KU
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -31,7 +31,7 @@
                 @endrole
                 @role('student')
                 <li class="nav-item">
-                    <a href="{{route('kegiatan.tampilkan')}}" class="nav-link">Cek Kegiatan</a>
+                    <a href="{{route('/')}}" class="nav-link">Cek Kegiatan</a>
                 </li>
                 @endrole
             </ul>
