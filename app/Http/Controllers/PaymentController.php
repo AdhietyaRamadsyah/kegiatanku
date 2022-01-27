@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Register;
 use App\Payment;
+use App\Activity;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class PaymentController extends Controller
         return view('verifikasi.pendaftaran.pembayaran', compact('pembayaran'));
     }
 
-    public function store()
+    public function store(Request $request, Activity $activity)
     {
 
         $verifikasi = Payment::create($this->validateRequest());
@@ -26,11 +27,15 @@ class PaymentController extends Controller
         if ($verifikasi->save()) {
             $get = Register::findOrFail($verifikasi->register_id);
 
+            $activity = Activity::findOrFail($get->activity_id);
+            $hitung = $activity->jumlah_peserta - $get->qty;
             $get->update ([
                 'status'  => 'terverifikasi'
             ]);
+            $activity->update([
+                'jumlah_peserta' => $hitung
+            ]);
         }
-
         return redirect()->back();
     }
 

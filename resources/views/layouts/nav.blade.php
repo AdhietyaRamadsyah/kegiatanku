@@ -10,12 +10,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <!-- <li class="nav-item">
-                    <a href="{{url('/')}}" class="nav-link">WELCOME PAGE</a>
-                </li> -->
+                @auth()
                 <li class="nav-item">
-                    <a href="{{route('dashboard.index')}}" class="nav-link text-white">DASHBOARD</a>
+                    <a href="{{route('home')}}" class="nav-link text-white">DASHBOARD</a>
                 </li>
+                @endauth
                 @role('admin')
                 <li class="nav-item">
                     <a href="{{route('data.siswa')}}" class="nav-link text-white">DATA SISWA</a>
