@@ -103,4 +103,4 @@
         </div>
     </body>
 </html>
-<marquee hspace="50" bgcolor="white" width="1500">Contact Person : 08126368236</marquee><br>
+<marquee hspace="50" bgcolor="white" width="1500">xdxdxddxdxdxdxdxdxdxdxdxdxddxdxdxdxdxdxdxdxdxxdxdxddxdxdxdxdxdxxdxdxdxdxdxdxdxdxdxdxdxdxdx </marquee><br>
