@@ -25,12 +25,15 @@
                 @endrole
                 @role('bendahara')
                 <li class="nav-item">
-                    <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link">VERIFIKASI PENDAFTARAN</a>
+                    <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link text-white">VERIFIKASI PENDAFTARAN</a>
                 </li>
                 @endrole
                 @role('student')
                 <li class="nav-item">
-                    <a href="{{route('/')}}" class="nav-link">Cek Kegiatan</a>
+                    <a href="{{route('/')}}" class="nav-link text-white">Cek Kegiatan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('activity')}}" class="nav-link text-white">Kegiatanku</a>
                 </li>
                 @endrole
             </ul>
