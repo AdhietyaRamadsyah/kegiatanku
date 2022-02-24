@@ -34,6 +34,7 @@ class DataSiswaController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
+            'phone'     => 'required',
             'password' => 'required',
        
         ]);
